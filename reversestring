@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class reverse{
+public static void main(String args[]){
+Scanner obj=new Scanner(System.in);
+System.out.println("Enter the word : ");
+String s=obj.nextLine();
+String ns="";
+int flag=0;
+for(int i=s.length()-1;i>=0;i--){
+char c=s.charAt(i);
+if(c>=97 && c<=122 || c>=65 && c<=90){
+flag=1;
+ns=ns+c;
+
+}
+else{
+flag=0;
+System.out.println("Error");
+break;
+}
+
+}
+if(flag==1)
+System.out.println("Reversed String is:"+ns);
+}
+}
