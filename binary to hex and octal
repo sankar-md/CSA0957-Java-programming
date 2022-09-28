@@ -1,0 +1,52 @@
+import java.util.*;
+
+public class test1{
+	
+	public static void main(String args[]){
+		try{
+		int dec;
+		Scanner obj=new Scanner(System.in);
+		System.out.println("Enter a decimal number :");
+		dec=obj.nextInt();
+		binary(dec);
+		octal(dec);
+		}
+		catch(InputMismatchException e){
+			System.out.println("Invalid Input...");
+		}
+		
+	}
+	public static void octal(int dec){
+		int ind=0;
+		int arr[]=new int[100];
+		int temp=dec;
+		while(temp>0)
+		{
+			arr[ind++]=temp%8;
+			temp=temp/8;
+		}
+		System.out.print("Equivalent Octal value for "+dec+" is :");
+		for(int i=ind-1;i>=0;i--)
+		{
+			System.out.print(arr[i]);
+		}
+		System.out.println();
+
+	}
+	public static void binary(int dec){
+		int temp1=dec;
+		int ind1=0;
+		int arr1[]=new int[100];
+		while(temp1>0)
+		{
+			arr1[ind1++]=temp1%2;
+			temp1=temp1/2;
+		}
+		System.out.print("Equivalent Binary value for "+dec+" is :");
+		for(int i=ind1-1;i>=0;i--)
+		{
+			System.out.print(arr1[i]);
+		}
+		System.out.println();
+	}
+}
